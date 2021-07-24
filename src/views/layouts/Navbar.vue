@@ -21,18 +21,17 @@
                     <a class="nav-link page-scroll" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li v-if="level == 'masyarakat'" class="nav-item">
-                    <a class="nav-link page-scroll" href="/pengaduan">Pengaduan</a>
+                    <a class="nav-link page-scroll" href="/datacovid">Data Covid</a>
                 </li>
                 <li v-if="level == 'masyarakat'" class="nav-item">
-                    <a class="nav-link page-scroll" href="/aspirasi">Aspirasi</a>
+                    <a class="nav-link page-scroll" href="/datars">Data RS</a>
                 </li>
                 <!-- Dropdown Menu -->          
                 <li v-if="level == 'masyarakat'" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Data Saya</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/getpengaduan"><span class="item-text">Pengaduan Saya</span></a>
+                        <a class="dropdown-item" href="/get"><span class="item-text">Vaksin Saya</span></a>
                         <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="/getaspirasi"><span class="item-text">Aspirasi Saya</span></a>
                     </div>
                 </li>
                 <li v-if="level == 'masyarakat'" class="nav-item">
