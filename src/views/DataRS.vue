@@ -16,6 +16,7 @@
             <div class="card-body">
               <p class="card-title float-left"><b>Data Rumah Sakit</b></p>
               <div class="table-responsive">
+                  <b-form-input type="text" v-on:keyup.enter="searching" v-model="search" placeholder="Pencarian RS ..."></b-form-input>
                 <b-table striped hover :items="rsakit" :fields="fields">
                   <template v-slot:cell(jumlah_kamar)="data">
                     <b-badge variant="info">{{ data.item.jumlah_kamar}}</b-badge>
@@ -90,6 +91,27 @@ export default {
       .catch(error => {
         console.log(error);
       });
+    },
+    searching : function(){
+    let conf = { headers: { "Authorization" : 'Bearer ' + this.key } };
+    let offset = (this.currentPage - 1) * this.perPage;
+          this.$bvToast.show("loadingToast");
+          let form = new FormData();
+          form.append("find", this.search);
+          this.axios.post("/rsakit/find/" + this.perPage + "/" + offset, form, conf)
+          .then(response => {
+            if(response.data.success == true){
+              this.$bvToast.hide("loadingToast");
+              this.rsakit = response.data.data.rsakit;
+              // this.rows = response.data.data.count;
+            } else {
+              this.message = "Gagal menampilkan report data"
+            }
+          })
+          .catch(error => {
+              console.log(error);
+          });
+          // console.log('abc')
     },
 
     pagination : function(){
