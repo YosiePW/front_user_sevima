@@ -17,7 +17,6 @@
               <p class="card-title float-left"><b>Data Vaksin</b></p>
               <div class="table-responsive">
                 <b-table striped hover :items="vaksin" :fields="fields">
-                  <b-table striped hover :items="vaksin" :fields="fields">
                   <template v-slot:cell(status)="data">
                     <b-badge variant="info" v-if="data.item.status === 'proses'">{{ data.item.status }}</b-badge>
                     <b-badge variant="warning" v-if="data.item.status === 'vaksin1'">{{ data.item.status }}</b-badge>

@@ -51,8 +51,8 @@ const routes = [
     }
   },
   {
-    path: '/getvaksin',
-    name: 'getvaksin',
+    path: '/get',
+    name: 'get',
     components: {default: GetVaksin, header: Navbar, footer: Footer},
     meta: { 
       requiresAuth: true
